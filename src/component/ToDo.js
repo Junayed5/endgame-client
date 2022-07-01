@@ -7,7 +7,7 @@ const ToDo = ({ date }) => {
     const formattedDate = format(date, "PP");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/task/${formattedDate}`)
+        fetch(`https://enigmatic-harbor-36131.herokuapp.com/task/${formattedDate}`)
             .then(res => res.json())
             .then(data => setConfirmTask(data))
     }, [formattedDate])
@@ -17,7 +17,7 @@ const ToDo = ({ date }) => {
         // const complete = {change}
         // console.log(complete);
 
-        fetch('http://localhost:5000/completeTask', {
+        fetch('https://enigmatic-harbor-36131.herokuapp.com/completeTask', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

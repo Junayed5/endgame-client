@@ -6,6 +6,7 @@ import ToDo from './component/ToDo';
 import Calender from './component/Calender';
 import Home from './component/Home';
 import { useState } from 'react';
+import Footer from './component/Footer';
 
 function App() {
   const [date, setDate] = useState(new Date())
@@ -18,6 +19,7 @@ function App() {
         <Route path='/toDo' element={<ToDo date={date}/>}/>
         <Route path='/calender' element={<Calender date={date} setDate={setDate}/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

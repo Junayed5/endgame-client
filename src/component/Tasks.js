@@ -5,7 +5,7 @@ const Tasks = () => {
     const [complete, setComplete] = useState({})
 
     useEffect(() => {
-        fetch('http://localhost:5000/completeTask')
+        fetch('https://enigmatic-harbor-36131.herokuapp.com/completeTask')
             .then(res => res.json())
             .then(data => setComplete(data));
     }, [])
