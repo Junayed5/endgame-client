@@ -14,7 +14,20 @@ const ToDo = ({ date }) => {
 
     const confirmSubmit = event => {
         const change = event.target.value;
-        console.log(change);
+        // const complete = {change}
+        // console.log(complete);
+
+        fetch('http://localhost:5000/completeTask', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({change: change}),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Success', data);
+            })
     }
 
     return (
